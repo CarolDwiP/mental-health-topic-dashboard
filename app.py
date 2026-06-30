@@ -19,7 +19,7 @@ st.set_page_config(
 CSS_FILE = Path("assets/css/style.css")
 
 if CSS_FILE.exists():
-    with open(CSS_FILE) as f:
+    with open(CSS_FILE, encoding="utf-8") as f:
         st.markdown(
             f"<style>{f.read()}</style>",
             unsafe_allow_html=True
@@ -31,23 +31,31 @@ if CSS_FILE.exists():
 
 with st.sidebar:
 
-    st.image(
-        "https://streamlit.io/images/brand/streamlit-mark-color.png",
-        width=80
-    )
-
-    st.title("Topic Modeling")
-
-    st.caption("Deployment CRISP-DM")
+    st.markdown("# 🧠")
+    st.title("Mental Health")
+    st.caption("Topic Modeling Dashboard")
 
     st.divider()
 
-    st.success(
+    st.info(
         """
-Dashboard siap digunakan.
+📌 **Navigasi Dashboard**
 
-Silakan gunakan menu di sebelah kiri
-untuk berpindah halaman.
+Gunakan menu pada sidebar untuk menjelajahi seluruh tahapan penelitian mulai dari Dataset hingga Temuan Penelitian.
+"""
+    )
+
+    st.divider()
+
+    st.caption(
+        """
+**Metodologi**
+
+CRISP-DM
+
+**Algoritma**
+
+Latent Dirichlet Allocation (LDA)
 """
     )
 
@@ -57,126 +65,171 @@ untuk berpindah halaman.
 
 st.title("🧠 Dashboard Topic Modeling")
 
-st.subheader(
-    """
-Analisis Dinamika Topik Percakapan Publik Mengenai
-Kesehatan Mental Remaja di Platform X/Twitter
-Menggunakan Latent Dirichlet Allocation (LDA)
-"""
+st.markdown("""
+### Analisis Dinamika Topik Percakapan Publik Mengenai Kesehatan Mental Remaja
+### di Platform X/Twitter Menggunakan *Latent Dirichlet Allocation* (LDA)
+""")
+
+st.caption(
+    "Deployment hasil penelitian berbasis Streamlit untuk eksplorasi Topic Modeling secara interaktif."
 )
 
 st.divider()
+
+# =====================================================
+# METRICS
+# =====================================================
+
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     st.metric(
-        "Jumlah Tweet",
+        "📊 Jumlah Tweet",
         "8.804"
     )
 
 with col2:
     st.metric(
-        "Jumlah Topik",
+        "🧩 Jumlah Topik",
         "11"
     )
 
 with col3:
     st.metric(
-        "Coherence Score",
+        "📈 Coherence Score",
         "0.4762"
     )
 
 with col4:
     st.metric(
-        "Model",
+        "🤖 Algoritma",
         "LDA"
     )
-    
+
 st.markdown("---")
+
+# =====================================================
+# OVERVIEW
+# =====================================================
+
+st.header("🔍 Gambaran Dashboard")
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.success("""
+### 📂 Dataset
+
+Menampilkan karakteristik dataset penelitian, statistik dasar, serta proses eksplorasi data sebelum dilakukan pemodelan.
+""")
+
+with col2:
+    st.info("""
+### 🧠 Topic Modeling
+
+Menyajikan proses pemodelan LDA, evaluasi model, visualisasi interaktif pyLDAvis, serta Word Cloud.
+""")
+
+with col3:
+    st.warning("""
+### 📊 Hasil Analisis
+
+Menyajikan distribusi topik, interpretasi setiap topik, temuan penelitian, dan informasi penelitian.
+""")
+
+st.markdown("---")
+
+# =====================================================
+# RINGKASAN
+# =====================================================
 
 st.header("📖 Ringkasan Penelitian")
 
-st.write(
-"""
-Penelitian ini bertujuan untuk menganalisis dinamika topik
-percakapan publik mengenai kesehatan mental remaja di
-platform X/Twitter menggunakan algoritma Latent Dirichlet
-Allocation (LDA).
+st.write("""
+Penelitian ini bertujuan untuk menganalisis dinamika topik percakapan publik mengenai kesehatan mental remaja pada platform X/Twitter menggunakan algoritma **Latent Dirichlet Allocation (LDA)**.
 
-Melalui pendekatan CRISP-DM, sebanyak 8.804 tweet berhasil
-diproses hingga diperoleh model terbaik dengan 11 topik
-dan nilai Coherence Score sebesar 0.4762.
-
-Dashboard ini dikembangkan sebagai tahap Deployment agar
-hasil pemodelan dapat dieksplorasi secara interaktif
-melalui antarmuka web berbasis Streamlit.
-"""
-)
+Sebanyak **8.804 tweet** diproses melalui tahapan **CRISP-DM**, sehingga diperoleh model terbaik dengan **11 topik** dan **Coherence Score sebesar 0.4762**. Dashboard ini dikembangkan sebagai media *deployment* agar hasil penelitian dapat dieksplorasi secara interaktif melalui antarmuka web.
+""")
 
 st.markdown("---")
+
+# =====================================================
+# TUJUAN
+# =====================================================
 
 st.header("🎯 Tujuan Penelitian")
 
 st.markdown("""
-- Mengaplikasikan algoritma **Latent Dirichlet Allocation (LDA)** untuk menemukan topik laten dari percakapan publik mengenai kesehatan mental remaja.
+- Mengidentifikasi topik-topik utama percakapan publik mengenai kesehatan mental remaja menggunakan algoritma **Latent Dirichlet Allocation (LDA)**.
 
-- Menentukan jumlah topik optimal menggunakan metrik **Coherence Score (Cv)** sehingga menghasilkan model yang representatif.
+- Menentukan model terbaik berdasarkan **Coherence Score** sehingga menghasilkan pemodelan topik yang representatif.
+
+- Menyajikan hasil analisis ke dalam dashboard interaktif yang mudah dieksplorasi oleh pengguna.
 """)
 
 st.markdown("---")
+
+# =====================================================
+# CRISP-DM
+# =====================================================
 
 st.header("🔄 Tahapan Penelitian (CRISP-DM)")
 
-with st.expander("Business Understanding"):
+with st.expander("1️⃣ Business Understanding"):
     st.write(
-        "Memahami fenomena kesehatan mental remaja dan menentukan tujuan penelitian."
+        "Memahami fenomena kesehatan mental remaja serta merumuskan tujuan penelitian."
     )
 
-with st.expander("Data Understanding"):
+with st.expander("2️⃣ Data Understanding"):
     st.write(
-        "Mengumpulkan dan mengeksplorasi dataset Twitter."
+        "Mengumpulkan, memahami, dan mengeksplorasi dataset hasil crawling platform X/Twitter."
     )
 
-with st.expander("Data Preparation"):
+with st.expander("3️⃣ Data Preparation"):
     st.write(
-        "Melakukan preprocessing seperti cleansing, case folding, tokenizing, stopword removal, slang normalization, dan stemming."
+        "Melakukan preprocessing berupa cleansing, case folding, tokenizing, normalisasi slang, stopword removal, dan stemming."
     )
 
-with st.expander("Modeling"):
+with st.expander("4️⃣ Modeling"):
     st.write(
-        "Membangun model Topic Modeling menggunakan algoritma LDA."
+        "Membangun model Topic Modeling menggunakan algoritma Latent Dirichlet Allocation (LDA)."
     )
 
-with st.expander("Evaluation"):
+with st.expander("5️⃣ Evaluation"):
     st.write(
-        "Menentukan model terbaik menggunakan Coherence Score dan Perplexity."
+        "Menentukan model terbaik berdasarkan nilai Coherence Score dan Perplexity."
     )
 
-with st.expander("Deployment"):
+with st.expander("6️⃣ Deployment"):
     st.write(
-        "Mengimplementasikan hasil penelitian ke dalam dashboard Streamlit."
+        "Mengimplementasikan hasil penelitian ke dalam dashboard web berbasis Streamlit."
     )
-    
+
 st.markdown("---")
 
-st.header("📌 Panduan Dashboard")
+# =====================================================
+# PANDUAN
+# =====================================================
+
+st.header("💡 Cara Menggunakan Dashboard")
 
 st.info("""
-Gunakan menu navigasi di sidebar sebelah kiri untuk menjelajahi setiap tahapan penelitian.
+Dashboard ini dirancang mengikuti alur metodologi **CRISP-DM**.
 
-Dashboard ini menyajikan hasil Topic Modeling mulai dari dataset, proses pemodelan, visualisasi interaktif pyLDAvis, Word Cloud, distribusi topik, hingga interpretasi hasil penelitian.
+Silakan gunakan menu navigasi pada **sidebar** untuk berpindah ke setiap tahapan penelitian, mulai dari Dataset, Preprocessing, Topic Modeling, Visualisasi LDA, Distribusi Topik, Interpretasi Topik, Word Cloud, hingga Temuan Penelitian.
 """)
 
 st.markdown("---")
 
-st.caption(
-"""
-Dashboard Topic Modeling
+# =====================================================
+# FOOTER
+# =====================================================
 
-Program Studi Teknik Informatika
+st.caption("""
+**Dashboard Topic Modeling Kesehatan Mental Remaja**
 
-Universitas Muhammadiyah Sukabumi
+Program Studi Teknik Informatika  
+Universitas Muhammadiyah Sukabumi  
 
-Deployment CRISP-DM • 2026
-"""
-)
+© 2026 • Deployment menggunakan Streamlit
+""")
