@@ -29,14 +29,6 @@ if CSS_FILE.exists():
 # SIDEBAR
 # =====================================================
 
-with st.sidebar:
-
-    st.markdown("# 🧠")
-    st.title("Mental Health")
-    st.caption("Topic Modeling Dashboard")
-
-    st.divider()
-
 # =====================================================
 # HERO
 # =====================================================
