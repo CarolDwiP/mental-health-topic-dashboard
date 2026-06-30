@@ -37,28 +37,6 @@ with st.sidebar:
 
     st.divider()
 
-    st.info(
-        """
-📌 **Navigasi Dashboard**
-
-Gunakan menu pada sidebar untuk menjelajahi seluruh tahapan penelitian mulai dari Dataset hingga Temuan Penelitian.
-"""
-    )
-
-    st.divider()
-
-    st.caption(
-        """
-**Metodologi**
-
-CRISP-DM
-
-**Algoritma**
-
-Latent Dirichlet Allocation (LDA)
-"""
-    )
-
 # =====================================================
 # HERO
 # =====================================================
