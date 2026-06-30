@@ -190,7 +190,7 @@ Dashboard ini dikembangkan sebagai implementasi tahap **Deployment** dalam metod
 
 # 👨‍🎓 Author
 
-**Carol Dwi P**
+**Carol Dwi Putra**
 
 Program Studi Teknik Informatika
 
