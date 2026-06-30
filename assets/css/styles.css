@@ -1,0 +1,83 @@
+/* ==========================================================
+   GLOBAL STYLE
+========================================================== */
+
+.main > div {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+/* ==========================================================
+   HERO TITLE
+========================================================== */
+
+.hero-title{
+    font-size:38px;
+    font-weight:700;
+    color:#2563EB;
+    margin-bottom:0;
+}
+
+.hero-subtitle{
+    font-size:18px;
+    color:#475569;
+    margin-top:5px;
+}
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.metric-card{
+    background:white;
+    border-radius:16px;
+    padding:22px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    border-left:6px solid #2563EB;
+    transition:.3s;
+}
+
+.metric-card:hover{
+    transform:translateY(-4px);
+}
+
+/* ==========================================================
+   SECTION TITLE
+========================================================== */
+
+.section-title{
+    color:#2563EB;
+    font-size:28px;
+    font-weight:700;
+    margin-top:15px;
+    margin-bottom:10px;
+}
+
+.section-text{
+    font-size:16px;
+    text-align:justify;
+    color:#444;
+}
+
+/* ==========================================================
+   INFO BOX
+========================================================== */
+
+.info-box{
+    background:#EFF6FF;
+    border-left:6px solid #2563EB;
+    padding:18px;
+    border-radius:12px;
+    margin-top:15px;
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.footer{
+    text-align:center;
+    color:gray;
+    margin-top:60px;
+    font-size:14px;
+}
